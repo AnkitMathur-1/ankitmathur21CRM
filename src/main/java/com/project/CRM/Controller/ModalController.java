@@ -2,9 +2,8 @@ package com.project.CRM.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -17,6 +16,7 @@ import com.project.CRM.service.CaseRepo;
 import com.project.CRM.service.ContactRepo;
 import com.project.CRM.service.LeadRepo;
 import com.project.CRM.serviceImpl.ContactServiceImpl;
+import com.project.CRM.serviceImpl.LeadServiceImpl;
 
 @Controller
 public class ModalController {
@@ -36,10 +36,13 @@ public class ModalController {
 	@Autowired
 	private ContactServiceImpl contactServiceImpl;
 	
-	@RequestMapping(value = "/LeadGrid")
-	public String LeadGridPage() {
-		return "LeadGrid";
-	}
+	@Autowired
+	private LeadServiceImpl leadServiceImpl;
+	
+//	@RequestMapping(value = "/LeadGrid")
+//	public String LeadGridPage() {
+//		return "LeadGrid";
+//	}
 	
 	@RequestMapping(value = "/AccountsGrid")
 	public String AccountGridPage() {
@@ -52,9 +55,17 @@ public class ModalController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("ContactGrid");
 		mv.addObject("contactDetails", contactServiceImpl.getContactDetails());
-		mv.addObject("testkey", "ankit");
 		return mv;
 	}
+	
+	@RequestMapping(value = "/LeadGrid")
+	public ModelAndView getLeadGridPage() {
+		ModelAndView modv = new ModelAndView();
+		modv.setViewName("LeadGrid");
+		modv.addObject("LeadDetails", leadServiceImpl.getLeadDetails());
+		return modv;
+	}
+	
 	
 	@RequestMapping(value = "/LeadData")
 	@ResponseBody

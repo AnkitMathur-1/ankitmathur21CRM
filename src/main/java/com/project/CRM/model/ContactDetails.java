@@ -23,7 +23,7 @@ public class ContactDetails {
 	private String f_name;
 	private String l_name;
 	private String mobile;
-	private String ac_phone;
+	private String ac_name;
 	private String email;
 	private String title;
 	private String report;

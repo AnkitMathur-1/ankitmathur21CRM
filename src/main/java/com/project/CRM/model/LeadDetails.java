@@ -15,10 +15,22 @@ public class LeadDetails {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	@Column(name = "first_name")
-	private String firstName;
+	private String first_name;
+	
+	@Column(name = "lead_src")
+	private String lead_src;
+	
+	@Column(name="lead_status")
+	private String Lead_status;
+	
+	@Column(name="salu")
+	private String salu;
+	
+	@Column(name="lead_own")
+	private String lead_own;
 
 	@Column(name = "last_name")
-	private String lastName;
+	private String last_name;
 
 	@Column(name = "phone")
 	private String phone;
@@ -29,7 +41,7 @@ public class LeadDetails {
 	@Column(name = "company")
 	private String company;
 
-	@Column(name = "Street")
+	@Column(name = "street")
 	private String street;
 
 	@Column(name = "city")
@@ -38,7 +50,7 @@ public class LeadDetails {
 	@Column(name = "state")
 	private String state;
 
-	@Column(name = "Zip")
+	@Column(name = "zip")
 	private String zip;
 
 	@Column(name = "country")
@@ -47,12 +59,12 @@ public class LeadDetails {
 	@Column(name = "website")
 	private String website;
 
-	@Column(name = "No_of_emp")
+	@Column(name = "no_of_emp")
 	private String no_of_emp;
 
 	@Column(name = "annual_rev")
 	private String annual_rev;
 
-	@Column(name = "Description")
+	@Column(name = "description")
 	private String description;
 }

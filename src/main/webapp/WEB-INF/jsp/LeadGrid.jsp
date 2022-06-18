@@ -32,7 +32,7 @@
 </head>
 <body>
 
-<h2>Grid View</h2>
+<h2>Leads Information</h2>
 
 
 
@@ -42,43 +42,60 @@
 <div class="row">
   <div class="column" style="background-color:#aaa;">
     <h2>Lead Owner</h2>
-    <p>Ram</p>
+     <c:forEach var="obj" items="${LeadDetails}">
+    	<p>${obj.lead_own}</p>
+	</c:forEach>
   </div>
   <div class="column" style="background-color:#bbb;">
     <h2>Lead Status</h2>
-    <p>Some text</p>
+    <c:forEach var="obj" items="${LeadDetails}">
+    	<p>${obj.Lead_status}</p>
+	</c:forEach>
+    
   </div>
 </div>
 
 <div class="row">
   <div class="column" style="background-color:#ccc;">
     <h2>Names: Salutation</h2>
-    <p>Some text</p>
+    <c:forEach var="obj" items="${LeadDetails}">
+    	<p>${obj.sal}</p>
+	</c:forEach>
   </div>
   <div class="column" style="background-color:#ddd;">
     <h2>First Name</h2>
-    <p>Some text..</p>
+     <c:forEach var="obj" items="${LeadDetails}">
+    	<p>${obj.first_name}</p>
+	</c:forEach>
   </div>
 </div>
 <div class="row">
   <div class="column" style="background-color:#aaa;">
     <h2>Last  Name</h2>
-    <p>Ram</p>
+     <c:forEach var="obj" items="${LeadDetails}">
+    	<p>${obj.last_name}</p>
+	</c:forEach>
   </div>
   <div class="column" style="background-color:#bbb;">
     <h2>Phone</h2>
-    <p>Some text..</p>
+     <c:forEach var="obj" items="${LeadDetails}">
+    	<p>${obj.phone}</p>
+	</c:forEach>
   </div>
 </div>
 
 <div class="row">
   <div class="column" style="background-color:#ccc;">
     <h2>Company</h2>
-    <p>Some text..</p>
+     <c:forEach var="obj" items="${LeadDetails}">
+    	<p>${obj.company}</p>
+	</c:forEach>
   </div>
   <div class="column" style="background-color:#ddd;">
     <h2>Email</h2>
-    <p>Some text..</p>
+     <c:forEach var="obj" items="${LeadDetails}">
+    	<p>${obj.email}</p>
+	</c:forEach>
   </div>
 </div>
 
@@ -86,49 +103,67 @@
 <div class="row">
   <div class="column" style="background-color:#aaa;">
     <h2>Street</h2>
-    <p>Some text</p>
+     <c:forEach var="obj" items="${LeadDetails}">
+    	<p>${obj.street}</p>
+	</c:forEach>
   </div>
   <div class="column" style="background-color:#bbb;">
     <h2>City</h2>
-    <p>Some text</p>
+     <c:forEach var="obj" items="${LeadDetails}">
+    	<p>${obj.city}</p>
+	</c:forEach>
   </div>
 </div>
 
 <div class="row">
   <div class="column" style="background-color:#ccc;">
     <h2>State</h2>
-    <p>Some text</p>
+     <c:forEach var="obj" items="${LeadDetails}">
+    	<p>${obj.state}</p>
+	</c:forEach>
   </div>
   <div class="column" style="background-color:#ddd;">
     <h2>Postal Code</h2>
-    <p>Some text</p>
+     <c:forEach var="obj" items="${LeadDetails}">
+    	<p>${obj.zip}</p>
+	</c:forEach>
   </div>
 </div>
 <div class="row">
     <div class="column" style="background-color:#aaa;">
       <h2>Country</h2>
-      <p>Some text</p>
+       <c:forEach var="obj" items="${LeadDetails}">
+    	<p>${obj.country}</p>
+	</c:forEach>
     </div>
     <div class="column" style="background-color:#bbb;">
       <h2>Website</h2>
-      <p>Some text</p>
+       <c:forEach var="obj" items="${LeadDetails}">
+    	<p>${obj.website}</p>
+	</c:forEach>
     </div>
   </div>
   
   <div class="row">
     <div class="column" style="background-color:#ccc;">
       <h2>Number of Employees</h2>
-      <p>Some text</p>
+      <c:forEach var="obj" items="${LeadDetails}">
+    	<p>${obj.no_of_emp}</p>
+	</c:forEach>
     </div>
     <div class="column" style="background-color:#ddd;">
       <h2>Lead Source</h2>
-      <p>Some text</p>
+       <c:forEach var="obj" items="${LeadDetails}">
+    	<p>${obj.Lead_src}</p>
+	</c:forEach>
     </div>
   </div>
   <div class="row">
     <div class="column" style="background-color:#aaa;">
       <h2>Annual Revenue</h2>
-      <p>Some text</p>
+       <c:forEach var="obj" items="${LeadDetails}">
+    	<p>${obj.annual_rev}</p>
+	</c:forEach>
     </div>
     <div class="column" style="background-color:#bbb;">
       <h2>Industry</h2>
@@ -147,11 +182,13 @@
   <div class="row">
     <div class="column" style="background-color:#ccc;">
       <h2>Description </h2>
-      <p>Some text</p>
+       <c:forEach var="obj" items="${LeadDetails}">
+    	<p>${obj.description}</p>
+	</c:forEach>
     </div>
     <button>Submit</button>
 
-  <input type="file" name="csv" id="idSelectFile" accept=".pdf"/>
+  <input type="file" name="csv" id="idSelectFile" accept=".csv"/>
   <input type="hidden" name="" id = "txtAttachment" />
   <input type="submit" />
   <button id ="btnExport" onclick="exportFile()">export</button>

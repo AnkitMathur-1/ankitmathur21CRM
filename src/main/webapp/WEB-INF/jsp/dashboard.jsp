@@ -103,9 +103,9 @@
       </div>
       <div class="modal-body">
         <form action="/LeadData" method = "post">
-          <input type="text" placeholder="Lead Owner">
+          <input type="text" name="lead_own" placeholder="Lead Owner">
           <div class="dropdown">
-          <select name="Lead Status" id="dropdown_lead">
+          <select name="Lead_status" id="dropdown_lead">
               <option value="Lead Status">Lead Status</option>
               <option value="new">New</option>
               <option value="contacted">Contacted</option>
@@ -115,7 +115,7 @@
           </select>
           
          
-      <select name="Name:Salutation" id="dropdown_name">
+      <select name="salu" id="dropdown_name">
       <option value="Name:Salutation">Name:Salutation</option>
       <option value="mr.">Mr.</option>
       <option value="ms">Ms.</option>
@@ -126,23 +126,23 @@
 
 
 
-      <input type="text" placeholder="Fisrt Name" name = "firstName">
-      <input type="text" placeholder="Last Name" name = "lastName">
-      <input type="text" placeholder="Phone">
-      <input type="text" placeholder="Company">
-      <input type="text" placeholder="Email">
-      <input type="text" placeholder="Address Information">
-      <input type="text" placeholder="Street">
-      <input type="text" placeholder="City">
-      <input type="text" placeholder="State/Province">
-      <input type="text" placeholder="Zip/Postal Code">
-      <input type="text " placeholder="Country">
-      <input type="text" placeholder="Website">
-      <input type="text" placeholder="Additional Information">
-      <input type="number" placeholder="No. of Employees">
+      <input type="text" placeholder="Fisrt Name" name = "first_name">
+      <input type="text" placeholder="Last Name" name = "last_name">
+      <input type="text" placeholder="Phone" name="phone">
+      <input type="text" placeholder="Company" name="company">
+      <input type="text" placeholder="Email" name="email">
+      
+      <input type="text" placeholder="Street" name="street">
+      <input type="text" placeholder="City" name = "city">
+      <input type="text" placeholder="State/Province" name = "state">
+      <input type="text" placeholder="Zip/Postal Code" name = "zip">
+      <input type="text " placeholder="Country" name = "country">
+      <input type="text" placeholder="Website" name =" website">
+      
+      <input type="number" placeholder="No. of Employees" name = "no_of_emp">
 
 
-      <select name="Lead Source" id="dropdown_source">
+      <select name="lead_src" id="dropdown_source">
       <option value="Lead Source">Lead Source</option>
       <option value="advertisement">Advertisement</option>
       <option value="Employee">Employee</option>
@@ -153,7 +153,7 @@
       </select>
 
 
-      <input type="number" placeholder="Annual Revenue">
+      <input type="number" placeholder="Annual Revenue" name = "annual_rev">
 
       <select name="Industry" id="dropdown_industry">
       <option value="Industry">Industry</option>

@@ -16,5 +16,6 @@ public class ContactServiceImpl {
 	
 	public List<ContactDetails> getContactDetails() {
 		return contactRepo.findAll();
+	
 	}
 }
