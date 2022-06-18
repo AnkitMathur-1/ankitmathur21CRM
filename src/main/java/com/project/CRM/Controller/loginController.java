@@ -10,33 +10,31 @@ import com.project.CRM.model.SignupDetails;
 import com.project.CRM.service.UserDataRepo;
 
 @Controller
-public class loginController {
-	
+public class LoginController {
+
 	@Autowired
 	UserDataRepo repo;
-	
-	
+
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginPage() {
 		return "login";
 	}
-	
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+
+	@RequestMapping(value = "/dashboard", method = { RequestMethod.POST, RequestMethod.GET })
 	public String welcomePage() {
 		return "dashboard";
 	}
-	
+
 	@RequestMapping(value = "/signup")
 	public String signupPage() {
 		return "signup";
 	}
-	
+
 	@RequestMapping(value = "/saveData")
 	@ResponseBody
 	public String saveData(SignupDetails user) {
 		repo.save(user);
 		return "Your details are saved Successfully";
 	}
-	
-	
+
 }

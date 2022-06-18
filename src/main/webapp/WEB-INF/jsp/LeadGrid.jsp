@@ -1,197 +1,75 @@
 <!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <html>
 <head>
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-    
-
-<style>
-
-* {
-  box-sizing: border-box;
-}
-
-/* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-/* Style the buttons */
-
-</style>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-<script src="index.js"></script>
-
+<title>Recent Leads</title>
 </head>
 <body>
+	<jsp:include page="header.jsp"></jsp:include>
+	<div class="row">
+		<div class="col-sm-12">
+			<br>
+			<h2>Leads Information</h2>
 
-<h2>Leads Information</h2>
+			<div
+				style="overflow-x: scroll; overflow-y: hidden; max-width: 1200px">
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Lead Owner</th>
+							<th>Lead Status</th>
+							<th>Salutation</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Phone</th>
+							<th>Company</th>
+							<th>Email</th>
+							<th>Street</th>
+							<th>City</th>
+							<th>State</th>
+							<th>Postal Code</th>
+							<th>Website</th>
+							<th>Number of Employees</th>
+							<th>Lead Source</th>
+							<th>Annual Revenue</th>
+							<th>Industry</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="obj" items="${LeadDetails}">
+							<tr>
+								<td>${obj.lead_own}</td>
+								<td>${obj.lead_status}</td>
+								<td>${obj.salu}</td>
+								<td>${obj.first_name}</td>
+								<td>${obj.last_name}</td>
+								<td>${obj.phone}</td>
+								<td>${obj.company}</td>
+								<td>${obj.email}</td>
+								<td>${obj.street}</td>
+								<td>${obj.city}</td>
+								<td>${obj.state}</td>
+								<td>${obj.zip}</td>
+								<td>${obj.website}</td>
+								<td>${obj.no_of_emp}</td>
+								<td>${obj.lead_src}</td>
+								<td>${obj.annual_rev}</td>
+								<td></td>
+								<td>${obj.description}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+			<br /> <br>
+			<button>Submit</button>
 
-
-
-
-<br>
-
-<div class="row">
-  <div class="column" style="background-color:#aaa;">
-    <h2>Lead Owner</h2>
-     <c:forEach var="obj" items="${LeadDetails}">
-    	<p>${obj.lead_own}</p>
-	</c:forEach>
-  </div>
-  <div class="column" style="background-color:#bbb;">
-    <h2>Lead Status</h2>
-    <c:forEach var="obj" items="${LeadDetails}">
-    	<p>${obj.Lead_status}</p>
-	</c:forEach>
-    
-  </div>
-</div>
-
-<div class="row">
-  <div class="column" style="background-color:#ccc;">
-    <h2>Names: Salutation</h2>
-    <c:forEach var="obj" items="${LeadDetails}">
-    	<p>${obj.sal}</p>
-	</c:forEach>
-  </div>
-  <div class="column" style="background-color:#ddd;">
-    <h2>First Name</h2>
-     <c:forEach var="obj" items="${LeadDetails}">
-    	<p>${obj.first_name}</p>
-	</c:forEach>
-  </div>
-</div>
-<div class="row">
-  <div class="column" style="background-color:#aaa;">
-    <h2>Last  Name</h2>
-     <c:forEach var="obj" items="${LeadDetails}">
-    	<p>${obj.last_name}</p>
-	</c:forEach>
-  </div>
-  <div class="column" style="background-color:#bbb;">
-    <h2>Phone</h2>
-     <c:forEach var="obj" items="${LeadDetails}">
-    	<p>${obj.phone}</p>
-	</c:forEach>
-  </div>
-</div>
-
-<div class="row">
-  <div class="column" style="background-color:#ccc;">
-    <h2>Company</h2>
-     <c:forEach var="obj" items="${LeadDetails}">
-    	<p>${obj.company}</p>
-	</c:forEach>
-  </div>
-  <div class="column" style="background-color:#ddd;">
-    <h2>Email</h2>
-     <c:forEach var="obj" items="${LeadDetails}">
-    	<p>${obj.email}</p>
-	</c:forEach>
-  </div>
-</div>
-
-<Address></Address>
-<div class="row">
-  <div class="column" style="background-color:#aaa;">
-    <h2>Street</h2>
-     <c:forEach var="obj" items="${LeadDetails}">
-    	<p>${obj.street}</p>
-	</c:forEach>
-  </div>
-  <div class="column" style="background-color:#bbb;">
-    <h2>City</h2>
-     <c:forEach var="obj" items="${LeadDetails}">
-    	<p>${obj.city}</p>
-	</c:forEach>
-  </div>
-</div>
-
-<div class="row">
-  <div class="column" style="background-color:#ccc;">
-    <h2>State</h2>
-     <c:forEach var="obj" items="${LeadDetails}">
-    	<p>${obj.state}</p>
-	</c:forEach>
-  </div>
-  <div class="column" style="background-color:#ddd;">
-    <h2>Postal Code</h2>
-     <c:forEach var="obj" items="${LeadDetails}">
-    	<p>${obj.zip}</p>
-	</c:forEach>
-  </div>
-</div>
-<div class="row">
-    <div class="column" style="background-color:#aaa;">
-      <h2>Country</h2>
-       <c:forEach var="obj" items="${LeadDetails}">
-    	<p>${obj.country}</p>
-	</c:forEach>
-    </div>
-    <div class="column" style="background-color:#bbb;">
-      <h2>Website</h2>
-       <c:forEach var="obj" items="${LeadDetails}">
-    	<p>${obj.website}</p>
-	</c:forEach>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="column" style="background-color:#ccc;">
-      <h2>Number of Employees</h2>
-      <c:forEach var="obj" items="${LeadDetails}">
-    	<p>${obj.no_of_emp}</p>
-	</c:forEach>
-    </div>
-    <div class="column" style="background-color:#ddd;">
-      <h2>Lead Source</h2>
-       <c:forEach var="obj" items="${LeadDetails}">
-    	<p>${obj.Lead_src}</p>
-	</c:forEach>
-    </div>
-  </div>
-  <div class="row">
-    <div class="column" style="background-color:#aaa;">
-      <h2>Annual Revenue</h2>
-       <c:forEach var="obj" items="${LeadDetails}">
-    	<p>${obj.annual_rev}</p>
-	</c:forEach>
-    </div>
-    <div class="column" style="background-color:#bbb;">
-      <h2>Industry</h2>
-      <!-- <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown button
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </div> -->
-    </div>
-  </div>
-  <div class="row">
-    <div class="column" style="background-color:#ccc;">
-      <h2>Description </h2>
-       <c:forEach var="obj" items="${LeadDetails}">
-    	<p>${obj.description}</p>
-	</c:forEach>
-    </div>
-    <button>Submit</button>
-
-  <input type="file" name="csv" id="idSelectFile" accept=".csv"/>
-  <input type="hidden" name="" id = "txtAttachment" />
-  <input type="submit" />
-  <button id ="btnExport" onclick="exportFile()">export</button>
-  
+			<input type="file" name="csv" id="idSelectFile" accept=".csv" /> <input
+				type="hidden" name="" id="txtAttachment" /> <input type="submit" />
+			<button id="btnExport" onclick="exportFile()">Export</button>
+		</div>
+	</div>
 </body>
 </html>
