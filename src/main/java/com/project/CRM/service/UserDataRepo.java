@@ -1,11 +1,11 @@
-package com.project.CRM.service;
+package com.project.CRM.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
-import com.project.CRM.model.SignupDetails;
+import com.project.CRM.model.UserDetails;
 
 @Service
-public interface UserDataRepo extends JpaRepository<SignupDetails, Integer>{
+public interface UserDataRepo extends JpaRepository<UserDetails, Integer>{
 
 }
